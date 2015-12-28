@@ -1,0 +1,26 @@
+{
+  "name": "fishsaying cp",
+  "version": "0.0.1",
+  "ignore": [],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "angular": "~1.4.7",
+    "angular-ui-router": "~0.2.15",
+    "angular-bootstrap": "~0.14.3",
+    "angular-cookies": "~1.4.2",
+    "angular-animate": "~1.4.2",
+    "angular-dialog-service": "5.2.8",
+    "angular-sanitize": "~1.4.2",
+    "ng-file-upload": "~9.0.10",
+    "angular-ui-sortable": "~0.13.0",
+    "jquery-ui": "~1.9.0"
+  },
+  "devDependencies": {
+    "bootstrap": "~3.3.5",
+    "angular-mocks": "~1.4.2"
+  },
+  "resolutions": {
+    "angular-bootstrap": "~0.14.2",
+    "angular": ">=1.2.x"
+  }
+}

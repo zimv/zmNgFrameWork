@@ -1,0 +1,150 @@
+.form-group{
+	input{
+		.text-thum;
+		padding-right: 20/@base;
+	}
+	.title{
+		.set-size(110;36);
+		display: inline-block;
+		color: @tit-gray;
+		.set-font(16;16);
+		text-align: right;
+	}
+	.title-lg{
+		.set-size(150;36);
+		display: inline-block;
+		color: @tit-gray;
+		.set-font(16;36);
+		text-align: right;
+	}
+	.search{
+		margin-left: 20/@base;
+		display: inline-block;
+		.set-size(400;36);
+		.set-font(16;36);
+		position: relative;
+		input{
+			.set-size(400;36);
+			padding-left: 4/@base;
+			padding-top: 9/@base;
+			padding-bottom: 9/@base;
+			border: 1px solid @bor-gray;
+		}
+		.icon{
+			position: absolute;
+			right: 5/@base;
+			top: 1/@base;
+			color: @bor-gray;
+			height: 36/@base;
+			font-size: 16/@base;
+			line-height: 36/@base;
+		}
+
+		.spinner {
+			.set-size(60;36);
+			text-align: center;
+			font-size: 10/@base;
+			position: absolute;
+			top: 0;
+			right: 5/@base;
+		}
+		.result-list{
+			position: absolute;
+			left: 0;
+			top: 100%;
+			width: 100%;
+			max-height: 200/@base;
+			background: @white;
+			border: 1px solid @bor-gray;
+			border-top: 0;
+			z-index: 100;
+			overflow-y: auto;
+			li{
+				width: 100%;
+				height: 36/@base;
+				line-height: 36/@base;
+				color: @tit-gray;
+				font-size: 14/@base;
+				text-indent: 10/@base;
+				cursor: pointer;
+				.text-thum();
+				&:hover{
+					background: @green;
+					color: @white;
+				}
+			}
+			.add{
+				color: @green;
+			}
+		}
+
+	}
+	.content{
+		position: relative;
+		display: inline-block;
+		margin-left: 20/@base;
+		width: 650/@base;
+	}
+	select{
+		height: 36/@base;
+		border: 1px solid @bor-gray;
+	}
+
+}
+
+.input-mini{
+	.set-size(200;36);
+	.set-font(16;36);
+	padding: 9/@base 4/@base;
+	border: 1px solid @bor-gray;
+}
+.input-short{
+	.set-size(300;36);
+	padding: 9/@base 4/@base;
+	border: 1px solid @bor-gray;
+}
+.input{
+	.set-size(400;36);
+	padding: 9/@base 4/@base;
+	border: 1px solid @bor-gray;
+}
+.input-long{
+	.set-size(600;36);
+	padding: 9/@base 4/@base;
+	border: 1px solid @bor-gray;
+}
+
+.textarea{
+	.set-size(400;160);
+	padding: 9/@base 4/@base;
+	border: 1px solid @bor-gray;
+}
+
+.year-range{
+	.text{
+		.set-size(100;36);
+		.set-font(16;36);
+		padding: 9/@base 4/@base;
+		border: 1px solid @bor-gray;
+		vertical-align: middle;
+	}
+	.line{
+		display: inline-block;
+		.set-size(30;36);
+		padding: 0 5/@base;
+		vertical-align: middle;
+		span{
+			display: block;
+			margin-top: 17/@base;
+			.set-size(20;2);
+			background: @bor-gray;
+		}
+		
+	}
+}
+
+.checkbox{
+	width:  20/@base;
+    height: 20/@base;
+    margin: 0!important;
+}

@@ -1,0 +1,24 @@
+.cover{
+	background-position: center center;
+	width: 100%;
+	background-size: cover;
+}
+//宽度不够显示省略点
+.text-thum{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.set-size(@width;@height){
+	width: @width/@base;
+	height: @height/@base;
+}
+.full-size{
+	width: 100%;
+	height: 100%;
+}
+
+.content-minheight{
+	min-height: 800/@base;
+}

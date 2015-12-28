@@ -1,0 +1,14 @@
+[
+	{
+		"name": "子慕大湿人",
+		"from": "github"
+	},
+	{
+		"name": "一文不提",
+		"from": "博客园"
+	},
+	{
+		"name": "zimv",
+		"from": "github blog"
+	}
+]

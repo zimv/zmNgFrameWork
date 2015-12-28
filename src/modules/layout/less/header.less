@@ -1,0 +1,73 @@
+/*页面头部*/
+.header{
+	.header-shadow();
+	width: 100%;
+	height: 250/@base;
+	background-color: @green;
+	.header-center{
+		.set-size(1560;250);
+		.nav{
+			padding-top: 30/@base;
+			.set-size(400;100);
+
+			ul{
+				.full-size();
+				li{
+					padding: 20/@base 20/@base 10/@base 20/@base;
+					.set-size(124;100);
+					float: left;
+					text-align: center;
+					img{
+						.set-size(32;32);
+					}
+					h6{
+						margin-top: 16/@base;
+						color: #fff;
+						font-size: 16/@base;
+						.text-shadow();
+					}
+				}
+				li:hover{
+					background-color: rgba(255,255,255,0.2);
+					border-radius: 3px; 
+				}
+				
+			}			
+		}
+		.logo{
+			float: left;
+			margin-top: 56/@base;
+			.set-size(125;59);
+		}
+		.user-info{
+			float: right;
+			margin-top: 60/@base;
+			.user-head{
+				vertical-align: middle;
+				.set-size(50;50);
+				margin-right: 10/@base;
+				.img-shadow();
+			}
+			.user-name{
+				color: #fff;
+				font-size: 12/@base;
+				.text-shadow();
+			}
+		}
+	}
+
+	.logout {
+		text-decoration: underline;
+		margin-left: 10/@base;
+		color: @white;
+	}
+
+	.login {
+		padding: 5/@base 25/@base 8/@base 25/@base;
+		border: 1px solid @white;
+		line-height: 52/@base;
+		font-size: 16/@base;
+		color: @white;
+		border-radius: @radius-default;
+	}
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="zmng">
+<head>
+	<meta charset="UTF-8">
+	<title>zimu angluar frameWork</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<link rel="stylesheet" href="build/common/css/app.css">
+	<link rel="stylesheet" href="bower/angular-dialog-service/dist/dialogs.min.css">
+	<script type="text/javascript" src="bower/jquery/dist/jquery.min.js"></script>
+	
+	<script type="text/javascript" src="bower/angular/angular.min.js"></script>
+	<script type="text/javascript" src="bower/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+	<script type="text/javascript" src="bower/angular-animate/angular-animate.min.js"></script>
+	<script type="text/javascript" src="bower/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+	<script type="text/javascript" src="build/app.js"></script>
+	
+	<script type="text/javascript" src="build/modules/layout/js/layout.js"></script>
+	<script type="text/javascript" src="build/modules/main/js/main.js"></script>
+	<script type="text/javascript" src="build/modules/test/js/test.js"></script>
+
+</head>
+
+<body ng-controller="MainCtrl">
+	<div ng-include="'build/modules/layout/templates/header.html'"></div>
+	<div class="fs-content fs-block-center" ui-view>
+	</div>
+	<div ng-include="'build/modules/layout/templates/footer.html'"></div>
+</body>
+
+</html>

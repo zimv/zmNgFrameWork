@@ -1,0 +1,39 @@
+.nav-tabs{
+	height: 36/@base;
+	li{
+		min-width: 100/@base;
+		height: 36/@base;
+		padding: 0 10/@base;
+		border: 1px solid @bor-gray;
+		line-height: 36/@base;
+		font-size: 14/@base;
+		color: @assist-gray;
+		margin-left: -1px;
+		text-align: center;
+		cursor: pointer;
+		float: left;
+		
+		&.active,&:hover{
+			color: @tit-gray;
+		}
+		&:first-child{
+			margin-left: 0;
+			border-top-left-radius: @radius-default;
+			border-bottom-left-radius: @radius-default;
+		}
+		&:last-child{
+			border-top-right-radius: @radius-default;
+			border-bottom-right-radius: @radius-default;
+		}
+	}
+}
+
+.nav-bar{
+	width: 100%;
+	height: 40/@base;
+	line-height: 40/@base;
+	background: @bg-gray;
+	color: @tit-gray;
+	font-size: 18/@base;
+	text-indent: 20/@base;
+}

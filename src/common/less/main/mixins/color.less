@@ -1,0 +1,14 @@
+.text-color(@color){
+	color: @color;
+}
+//渐变
+.gradient(@direction; @start; @end) {
+    filter: ~"alpha(opacity=100 finishopacity=50 style=1 startx=0,starty=0,finishx=0,finishy=150) progid:DXImageTransform.Microsoft.gradient(startcolorstr="@start~",endcolorstr="@end~",gradientType=0)";
+    -ms-filter: ~"alpha(opacity=100 finishopacity=50 style=1 startx=0,starty=0,finishx=0,finishy=150) progid:DXImageTransform.Microsoft.gradient(startcolorstr="@start~",endcolorstr="@end~",gradientType=0)";/*IE8*/	
+    background-image: @start; /* 一些不支持背景渐变的浏览器 */  
+    background-image: -webkit-linear-gradient(to @direction, @start, @end);
+    background-image: -moz-linear-gradient(to @direction, @start, @end);  
+    background-image: -ms-linear-gradient(to @direction, @start, @end);  
+    background-image: -o-linear-gradient(to @direction, @start, @end);
+    background-image: linear-gradient(to @direction, @start, @end);
+}

@@ -1,0 +1,29 @@
+.set-font(@size;@line-height){
+	font-size: @size/@base;
+	line-height: @line-height/@base;
+}
+//设置透明
+.opacity(@value){
+	opacity: @value;
+	filter: ~'alpha(opacity='@value*100~')';
+}
+//居中
+.centre-center(@width;@height){
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-@width/2;
+	margin-top:-@height/2;
+}
+
+//圆角
+.set-radius(@top-left;@top-right;@bottom-left;@bottom-right){
+	border-top-left-radius: @top-left;
+	border-top-right-radius: @top-right;
+	border-bottom-left-radius: @bottom-left;
+	border-bottom-right-radius: @bottom-right;
+}
+
+.bgimg(@url){
+	background-image: ~'url(' @url~ ')';
+}

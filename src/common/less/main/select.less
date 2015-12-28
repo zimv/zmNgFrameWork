@@ -1,0 +1,68 @@
+.select-none{
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-o-user-select:none;
+	user-select:none;
+}
+
+.select{
+	height: 36/@base;
+	.set-font(14;14);
+	border: 1px solid @bor-gray;
+	&:focus{
+		outline: 0;
+		border: 1px solid @green;
+	}
+}
+
+/* from tangmeng */
+.select-lg{
+	height: 36/@base;
+	.set-font(16;16);
+	border: 1px solid @bor-gray;
+	&:focus{
+		outline: 0;
+		border: 1px solid @green;
+	}
+}
+
+.tag-select-list{
+	width: 100%;
+	height: 160/@base;
+	border-radius: @radius-default;
+	border: 1px solid @bor-gray;
+	overflow: auto;
+	li{
+		width: 100%;
+		height: 30/@base;
+		.set-font(14;30);
+		color: @text-gray;
+		text-indent: 20/@base;
+		cursor: pointer;
+		position: relative;
+		&:hover,&:active,&:focus{
+			background: @green;
+			color: @white;
+			.check{
+				color: @white;
+			}
+		}
+		.check{
+			.set-size(30;30);
+			.set-font(16;30);
+			position: absolute;
+			left: 5/@base;
+			top: 0;
+			text-indent: 0;
+			line-height: 30/@base;
+			display: none;
+		}
+	}
+	.active{
+		background: @bg-gray;
+		.check{
+			display: block;
+			color: @green;
+		}
+	}
+}

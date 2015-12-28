@@ -1,0 +1,97 @@
+//btn-1常规按钮,btn-2线框按钮
+.btn-green-1{
+	.btn-base();
+	.btn-sty(@white;@green;@green);
+	.btn-hover(@white;@green-hover;@green-hover);
+	border: 0;
+}
+.btn-green-2{
+	.btn-base();
+	.btn-sty(@green;@transparent;@green);
+	.btn-hover(@white;@green;@green);
+	.border-btn();
+}
+
+
+.btn-gray-1{
+	.btn-base();
+	.btn-sty(@white;@gray;@gray);
+	.btn-hover(@white;@gray;@gray);
+	border: 0;
+}
+.btn-gray-2{
+	.btn-base();
+	.btn-sty(@gray;@transparent;@gray);
+	.btn-hover(@gray;@transparent;@gray);
+	.border-btn();
+}
+
+.btn-white-2{
+	.btn-base();
+	.btn-sty(@white;@transparent;@white);
+	.btn-hover(@tit-gray;@white;@white);
+	.border-btn();
+}
+.btn-more-1{
+	width: 100%;
+	height: 60/@base;
+	line-height: 60/@base;
+	background: #f4f7f7;
+	text-align: center;
+	color: @green;
+	font-size: 18/@base;
+	.btn-hover(@white;@green;@green);
+	cursor: pointer;
+	.on,.off,.ing,.fail{
+		display: none;
+	}
+	&.on .on{
+		display: block;
+	}
+	&.off .off{
+		display: block;
+	}
+	&.fail .fail{
+		display: block;
+	}
+	&.ing .ing{
+		display: block;
+	}
+}
+
+.btn-disabled {
+	cursor: not-allowed!important;
+	opacity: 0.65;
+}
+
+.close-top-left{
+	.set-size(32;32);
+	.set-font(18;32);
+	position: absolute;
+	left: -16/@base;
+	top: -16/@base;
+	cursor: pointer;
+	background: @gray;
+	border-radius: 50%;
+	text-align: center;
+	color: @white;
+}
+.close-top-right{
+	.set-size(32;32);
+	.set-font(18;32);
+	position: absolute;
+	top: 16/@base;
+	right: 16/@base;
+	cursor: pointer;
+	color: @gray;
+	border-radius: 50%;
+	text-align: center;
+}
+
+.btn-size-m{
+	width: 200/@base;
+    height: 36/@base;
+}
+.btn-size-lg {
+    .set-size(322;56);
+}

@@ -1,0 +1,41 @@
+.btn-base{
+	cursor: pointer;
+	min-width: 90/@base;
+	min-height: 36/@base;
+	.set-font(14;14);
+	padding: 10/@base 20/@base;
+	border-radius: @radius-default;
+}
+.btn-sty(@text;@bg;@bor){
+	color: @text;
+	background-color: @bg;
+	border-color: @bor;
+}
+.border-btn{
+	border-width: 1px;
+	border-style: solid;
+}
+.btn-hover(@text;@bg;@bor){
+	&&:hover,&&:active,&&:focus{
+		color: @text;
+		background-color: @bg;
+		border-color: @bor;
+	}
+}
+
+//img button
+.img-btn(@src;@width;@height){
+	background-image: url(@src);
+	width: @width;
+	height: @height;
+	background-size: 100%;
+}
+.img-btn-hover(@src){
+	&&:hover,&&:active,&&:focus{
+		background-image: url(@src);
+	}
+}
+
+.btn-shadow-default{
+	box-shadow: 0px 1px 3px 0px @gray;
+}

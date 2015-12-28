@@ -1,0 +1,117 @@
+
+body {
+	font-family:Heiti SC,Helvetica Neue,Open Sans,STHeiti,Microsoft Yahei,~'\9ED1\4F53',Arial,sans-serif;
+	font-weight: normal;
+	font-size: 14/@base;
+	color: @text-gray;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: transparent;//:active hack
+	background: #f1f4f4;
+}
+*{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+a:hover,a:link,a:active,a:focus{
+	text-decoration: none;
+}
+ul,li,body{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+form{
+	position: relative;
+}
+label,h1,h2,h3,h4,h5,h6{
+	font-weight: 100;
+}
+
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.pointer{
+	&:hover{
+		cursor: pointer;
+	}
+}
+
+input[type="text"],select{
+	border-radius: @radius-input;
+}
+//保证占位
+[class^=col-]{
+	min-height: 1px;
+}
+
+//文字居中分割线
+.divide-text-line{
+	position:absolute;
+	top:10px;
+	left:0;
+	width:100%;
+	span{
+		background:#fff;
+		margin:0 auto;
+		display:inline-block;
+		padding:0 8px
+	}
+}
+
+
+//边框border
+.bor-radius-6{
+	border-radius: 6px !important;
+}
+.border{
+	border: 1px solid @bor-gray;
+}
+.border-2{
+	border: 2px solid @bor-gray;
+}
+.bor-hr{
+	border-bottom: 1px solid @bor-gray;
+}
+.special-hr{
+	width: 12%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border-top: 3px solid @green;
+}
+.border-none{
+	border: 0!important;
+}
+.radius-left-none{
+	border-top-left-radius: 0!important;
+	border-bottom-left-radius: 0!important;
+} 
+.radius-right-none{
+	border-top-right-radius: 0!important;
+	border-bottom-right-radius: 0!important;
+} 
+
+
+//textarea
+.textarea{
+	border: 1px solid @bor-gray;
+	border-radius: @radius-default;
+	width: 100%;
+	padding: 0 10px;
+	min-height: 80px;
+	resize: none;
+}
+
+.inline-block {
+	display: inline-block;
+}
