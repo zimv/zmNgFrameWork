@@ -21,6 +21,8 @@ gulp.task("cleanImg", function(){
 });*/
 gulp.task("clean", function(){
 	return gulp.src(config.dest)
+		.pipe(clean({force: true}))
+		.pipe(gulp.src(config.temp))
 		.pipe(clean({force: true}));
 
 });
