@@ -13,6 +13,6 @@ gulp.task('watch', function(){
 		gulp.start('html'); 			
 	});
 	watch(config.browserify.watch, function(){  //监听所有image
-		gulp.start('browserify'); 			
+		gulp.start('watchJs'); 			
 	});
 })
