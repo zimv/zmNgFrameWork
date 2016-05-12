@@ -11,6 +11,7 @@ var uglify = require('gulp-uglify');
 var buffer = require('vinyl-buffer');
 var handleErrors = require('../util/handleErrors');
 
+
 gulp.task('browserify', function(){
     dev();
 });
@@ -38,7 +39,7 @@ function deploy(){
                       .pipe(source(dirs_2[j]+'.js'))
                       .pipe(buffer()) 
                       .pipe(uglify())
-                      .pipe(gulp.dest(config.dest + '/' + dirs_1[i] + '/' + dirs_2[j] + '/js/'));
+                      .pipe(gulp.dest(config.dest + '/' + dirs_1[i] + '/' + dirs_2[j] + '/js/'))
                 }
             }
         }
@@ -52,7 +53,7 @@ function deploy(){
       .pipe(source('app.js'))
       .pipe(buffer()) 
       .pipe(uglify())
-      .pipe(gulp.dest(config.dest));
+      .pipe(gulp.dest(config.dest))
     return browserify();
 }
 function dev(){
@@ -73,7 +74,7 @@ function dev(){
                       .bundle()
                       .on('error', handleErrors) 
                       .pipe(source(dirs_2[j]+'.js'))
-                      .pipe(gulp.dest(config.dest + '/' + dirs_1[i] + '/' + dirs_2[j] + '/js/'));
+                      .pipe(gulp.dest(config.dest + '/' + dirs_1[i] + '/' + dirs_2[j] + '/js/'))
                 }
             }
         }
@@ -85,6 +86,6 @@ function dev(){
       .bundle()
       .on('error', handleErrors)
       .pipe(source('app.js'))
-      .pipe(gulp.dest(config.dest));
+      .pipe(gulp.dest(config.dest))
     return browserify();
 }
