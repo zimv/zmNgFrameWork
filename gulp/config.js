@@ -31,10 +31,10 @@ module.exports = {
 		dest: dest
 	},
 	browserify:{
-		watch: src+'/**/*.js',
-    	src: src,
-    	dest: temp,
-		rev: dest + "/rev/js"
+		watch: src + '/**/*.js',
+    	src: src + "/**/app.js",
+    	dest: dest,
+		rev: temp + "/rev/js"
 	},
 	iconFont:{//手动设置
 		src: src + "/common/less/fonts/fonts/*",
@@ -45,9 +45,4 @@ module.exports = {
         src: root + "/index.html",//root index.html
         dest: ""  //这个输出并没有实际输出，但是还是需要执行一次，否则不会生成
 	},
-	revJs: {//browserify不支持rev，所以执行完browserify之后，再重新rev
-		src: temp + "/**/*.js",
-		dest: dest,  
-		rev: temp + "/rev/js"
-	}
 }

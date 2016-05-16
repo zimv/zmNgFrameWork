@@ -4,88 +4,55 @@
  */
 var gulp = require('gulp');
 var browserify = require('browserify');
-var source = require('vinyl-source-stream');
-var fs = require('fs');
+
 var config = require('../config').browserify;
 var uglify = require('gulp-uglify');
 var buffer = require('vinyl-buffer');
 var handleErrors = require('../util/handleErrors');
+var through = require('through2');
 
+var rev = require('gulp-rev');
 
 gulp.task('browserify', function(){
-    dev();
+    return dev();
 });
 gulp.task('browserify-deploy', function(){
-    deploy();
+    return deploy();
 });
 
+
 function deploy(){
-    var dirs_1 = fs.readdirSync(config.src);
-
-    for(var i = 0;i < dirs_1.length;i++){
-
-        var tmpPath = config.src + '/' + dirs_1[i],
-            stats = fs.statSync(tmpPath);
-
-        if( stats.isDirectory() ){//是否是文件夹
-            var dirs_2 = fs.readdirSync(config.src + "/" + dirs_1[i]);
-
-            for(var j = 0;j < dirs_2.length;j++){
-                if(fs.existsSync(config.src + '/' + dirs_1[i] + '/'+dirs_2[j]+'/app.js')){
-                    browserify()
-                      .add(config.src + '/' + dirs_1[i] + '/'+dirs_2[j]+'/app.js')
-                      .bundle()
-                      .on('error', handleErrors) 
-                      .pipe(source(dirs_2[j]+'.js'))
-                      .pipe(buffer()) 
-                      .pipe(uglify())
-                      .pipe(gulp.dest(config.dest + '/' + dirs_1[i] + '/' + dirs_2[j] + '/js/'))
-                }
-            }
-        }
-        
-    }
-    //对根入口打包
-    browserify()
-      .add(config.src + '/app.js')
-      .bundle()
-      .on('error', handleErrors)
-      .pipe(source('app.js'))
-      .pipe(buffer()) 
-      .pipe(uglify())
-      .pipe(gulp.dest(config.dest))
-    return browserify();
+    return gulp.src(config.src)
+        .pipe(browserified())
+        .pipe(buffer()) 
+        .pipe(uglify())
+        .pipe(rev())
+        .pipe(gulp.dest(config.dest))
+        .pipe(rev.manifest()) //set hash key json
+        .pipe(gulp.dest(config.rev)); //dest hash key json
 }
 function dev(){
-    var dirs_1 = fs.readdirSync(config.src);
+    return gulp.src(config.src)
+        .pipe(browserified())
+        .pipe(buffer())
+        .pipe(rev())
+        .pipe(gulp.dest(config.dest))
+        .pipe(rev.manifest()) //set hash key json
+        .pipe(gulp.dest(config.rev)); //dest hash key json
 
-    for(var i = 0;i < dirs_1.length;i++){
-
-        var tmpPath = config.src + '/' + dirs_1[i],
-            stats = fs.statSync(tmpPath);
-
-        if( stats.isDirectory() ){//是否是文件夹
-            var dirs_2 = fs.readdirSync(config.src + "/" + dirs_1[i]);
-
-            for(var j = 0;j < dirs_2.length;j++){
-                if(fs.existsSync(config.src + '/' + dirs_1[i] + '/'+dirs_2[j]+'/app.js')){
-                    browserify()
-                      .add(config.src + '/' + dirs_1[i] + '/'+dirs_2[j]+'/app.js')
-                      .bundle()
-                      .on('error', handleErrors) 
-                      .pipe(source(dirs_2[j]+'.js'))
-                      .pipe(gulp.dest(config.dest + '/' + dirs_1[i] + '/' + dirs_2[j] + '/js/'))
-                }
-            }
-        }
-        
-    }
-    //对根入口打包
-    browserify()
-      .add(config.src + '/app.js')
-      .bundle()
-      .on('error', handleErrors)
-      .pipe(source('app.js'))
-      .pipe(gulp.dest(config.dest))
-    return browserify();
 }
+var browserified = function() {
+    return through.obj(function(chunk, enc, callback) {
+        if(chunk.isBuffer()) {
+            var b = browserify(chunk.path);
+                // Any custom browserify stuff should go here
+                //.transform(to5browserify);
+
+            chunk.contents = b.bundle();
+
+            this.push(chunk);
+
+        }
+        callback();
+    });
+};
