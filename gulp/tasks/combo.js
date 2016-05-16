@@ -5,6 +5,7 @@ gulp.task('default', gulpsync.sync(['clean', ['less-dev', 'images', 'html', 'bro
 gulp.task('deploy', gulpsync.sync(['clean', ['less-deploy', 'images', 'html', 'browserify-deploy', 'iconFont'], 'rev-collector']));
 
 gulp.task('watchJs', gulpsync.sync(['browserify', 'rev-collector']));
+gulp.task('watchCss', gulpsync.sync(['less-dev', 'rev-collector']));
 /*
 	gulp任务会同步执行，rev-js任务是执行在browserify任务之后的
 	browserify任务完成，会生成临时的js文件夹，rev-js将会操作这个文件夹。
