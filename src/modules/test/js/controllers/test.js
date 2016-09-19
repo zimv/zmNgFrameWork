@@ -1,11 +1,11 @@
 angular.module("zmng.test")
 	.controller("TestCtrl", Ctrl);
 
-Ctrl.$inject = ["$scope", "TestService"];
-function Ctrl($scope, TestService) {
+Ctrl.$inject = ["$scope", "ApiService"];
+function Ctrl($scope, ApiService) {
 
 	$scope.data = [];
-	TestService.IGetData().then(function(res){
+	ApiService.IGetData().then(function(res){
 		$scope.data = res;
 	});
 	
