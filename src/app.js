@@ -1,4 +1,4 @@
-					
+
 angular.module("zmng", [
 	"ui.router",
 	"ui.bootstrap",
@@ -9,4 +9,5 @@ angular.module("zmng", [
 ]);
 
 require("./config.js");	
+require("./apiService.js");	
 require('./common/js/resize.js');

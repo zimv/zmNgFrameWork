@@ -1,8 +1,8 @@
+//所有接口应该写在这里
+var config = require('./common/js/config.js');
 
-var config = require('../../../../common/js/config.js');
-
-angular.module("zmng.test")
-	.factory("TestService", Service);
+angular.module("zmng")
+	.factory("ApiService", Service);
 
 Service.$inject = ["$http"];
 
